@@ -10,8 +10,8 @@ use PHPUnit\Framework\TestCase;
  * Those are the rules:
  *
  * If an input is dividable by 3 you output Fizz
- * If an input is dividable by 5 you output Bazz
- * If it's dividable by 3 and 5 you output FizzBazz
+ * If an input is dividable by 5 you output Buzz
+ * If it's dividable by 3 and 5 you output FizzBuzz
  * If none of the above ones are correct you output the input as string
  */
 class FizzBuzzTest extends TestCase
