@@ -1,0 +1,24 @@
+{
+  "name": "mrfastdie/interview",
+  "description": "PHP 8.1 Unit tests for questions you can take to an interview",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "MrFastDie"
+    }
+  ],
+  "require": {
+    "phpunit/phpunit": "^9.5.16"
+  },
+  "autoload": {
+    "psr-4": {
+      "MrFastDie\\Interview\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MrFastDie\\Interview\\FizzBuzz\\test\\": "src/FizzBuzz/test"
+    }
+  }
+}
