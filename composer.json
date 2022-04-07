@@ -18,7 +18,8 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "MrFastDie\\Interview\\FizzBuzz\\test\\": "src/FizzBuzz/test"
+      "MrFastDie\\Interview\\FizzBuzz\\test\\": "src/FizzBuzz/test",
+      "MrFastDie\\Interview\\StateMachine\\test\\": "src/StateMachine/test"
     }
   }
 }
