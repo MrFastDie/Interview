@@ -6,3 +6,4 @@ Feel free to contribute to this project.
 ### Current implementations:
 
 - FizzBuzz
+- StateMachine
