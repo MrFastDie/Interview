@@ -79,39 +79,16 @@ class StateMachineStage2Test extends TestCase
     {
         $ret = [];
 
-        foreach ($this->possible_next_states as $stateName => $nextStates) {
-            foreach ($nextStates as $state) {
-                $ret[sprintf("%s to %s", $stateName, $state)] = [
-                    'currentState' => $stateName,
-                    'transitionTo' => $state,
-                    'allowedTransition' => true,
+
+        foreach ($this->states as $left) {
+            foreach ($this->states as $right) {
+                $ret[sprintf("%s to %s", $left, $right)] = [
+                    'currentState' => $left,
+                    'transitionTo' => $right,
+                    'allowedTransition' => in_array($right, $this->possible_next_states[$left]),
                 ];
             }
         }
-
-        foreach ($this->states as $state) {
-            $ret[sprintf("%s to %s", $state, $state)] = [
-                'currentState' => $state,
-                'transitionTo' => $state,
-                'allowedTransition' => false,
-            ];
-
-            if ('ERROR' === $state) {
-                continue;
-            }
-
-            $ret[sprintf("ERROR to %s", $state)] = [
-                'currentState' => 'ERROR',
-                'transitionTo' => $state,
-                'allowedTransition' => false,
-            ];
-        }
-
-        $ret['CANCELED TO NEW'] = [
-            'currentState' => 'CANCELED',
-            'transitionTo' => 'NEW',
-            'allowedTransition' => false,
-        ];
 
         return $ret;
     }
